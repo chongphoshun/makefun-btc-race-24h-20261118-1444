@@ -70,7 +70,7 @@ const COOLDOWN = 60; // bars to wait after a sell before the next buy
 
 // --- exit parameters ---
 const TAKE_PROFIT = 0.008; // mode A: +0.8% over the entry close
-const TRAIL_STOP = 0.006; // mode A: 0.6% below the peak close since entry
+const TRAIL_STOP = 0.007; // mode A: 0.7% below the peak close since entry
 const HARD_STOP = 0.008; // mode A: 0.8% below the entry close
 const WASHOUT_TP = 0.02; // mode B: +2.0% over the entry close
 const WASHOUT_TRAIL = 0.01; // mode B: 1.0% below the peak close since entry

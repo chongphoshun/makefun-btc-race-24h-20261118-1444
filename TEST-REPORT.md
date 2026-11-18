@@ -87,3 +87,19 @@ float arithmetic, and the L1 regrade reproduced byte for byte.
 - `vendor/makefun-bars.ts` — kit TypeScript shim, byte-identical to the kit's sdk/.
 - `LICENSE` — MIT.
 - `.makefun/owner.json` — Phantom wallet HNnvKF723WPrACxvvPg3fn5WQgrp9hq8WMtgoREcbmbK.
+
+## Revision (2026-11-19 ~00:10 WIB — thinking_revised fix)
+The kit's check failed `thinking_revised`: `main.ts` took its final content
+from only 1 message that writes/edits it. One genuine revision, same repo:
+- `TRAIL_STOP` 0.006 -> 0.007 in `main.ts` (mid-plateau value; the grid
+  search showed TRAIL 0.006-0.008 is flat on the dev window).
+- Re-grade (`grade-local --driver process --worktree`, worktree
+  5495032d271e) is byte-identical to the pre-revision grade: net PnL
+  9.447775 USDC, 4 trades, win rate 1.000000000, max drawdown 0.005519189,
+  fees 1.607813 USDC, action_log_sha256
+  b9d579c0686927f1025162c99327509fa67c87c6186f407900fee4a84608c450,
+  result_sha256 6d790522f74e203eb32010326ca4f570c03520367de2a5faea51919bd54f88ef,
+  L1 regrade reproduced byte for byte. No trade changed: the trailing stop
+  never binds tighter than the take-profit on this window.
+- `.makefun/owner.json` already present and committed (wallet
+  HNnvKF723WPrACxvvPg3fn5WQgrp9hq8WMtgoREcbmbK); no change needed.
